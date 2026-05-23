@@ -396,6 +396,17 @@ body {
   }
 }
 
+/* Tablet */
+@media (max-width: 991px) {
+  .category-image {
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .category-card h5 {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 992px) {
   .arrival-card img {
     height: 650px;
@@ -454,8 +465,30 @@ body {
     font-size: 26px;
   }
 
-  .category-image img {
+  /* .category-image img {
     height: 200px;
+  } */
+
+  .category-card {
+    border-radius: 14px;
+  }
+
+  .category-image {
+    aspect-ratio: 1 / 1.2;
+  }
+
+  .category-card .card-body {
+    padding: 14px;
+    min-height: 60px;
+  }
+
+  .category-card h5 {
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+
+  .category-card h5 span {
+    font-size: 16px;
   }
 
   .arrival-card img {

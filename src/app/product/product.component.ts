@@ -161,9 +161,9 @@ shareOnInstagram(product: any, event: Event): void {
   const productUrl =
     `${window.location.origin}/product/${product.id}`;
 
-  navigator.clipboard.writeText(productUrl);
-
-  alert('Product link copied for Instagram sharing');
+  navigator.clipboard.writeText(productUrl).then(() => {
+  alert('Product link copied!');
+});
 
 }
 

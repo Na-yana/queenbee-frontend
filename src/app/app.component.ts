@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'frontend';
 
-  whatsappNumber = '917510552532';
+  whatsappNumber = '918113874000';
 
 openWhatsApp() {
   const message = "Hello I am interested in your product";

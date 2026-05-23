@@ -1,6 +1,6 @@
 <!-- Modern Responsive Fashion Carousel -->
 <div
-  id="carouselExampleInterval"
+  id="carouselExampleInterval home" 
   class="carousel slide modern-carousel"
   data-bs-ride="carousel"
 >
@@ -114,7 +114,7 @@
      CATEGORY + NEW ARRIVALS SECTION
 ========================= -->
 
-<section class="category-arrival-section">
+<section class="category-arrival-section" id="categories">
   <div class="container-fluid">
     <div class="row g-4">
       <!-- =========================
@@ -128,7 +128,10 @@
 
         <div class="row g-3">
           <!-- Card 1 -->
-          <div class="col-lg-4 col-md-6" *ngFor="let category of categories">
+          <div
+            class="col-6 col-md-6 col-lg-4"
+            *ngFor="let category of categories"
+          >
             <div
               class="card category-card border-0"
               (click)="openCategory(category.id)"
@@ -162,74 +165,57 @@
             <h2>New Arrivals</h2>
           </div>
 
-         <div
-          id="arrivalCarousel"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
+          <div
+            id="arrivalCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div
+                class="carousel-item"
+                *ngFor="let product of newArrivalProducts; let i = index"
+                [class.active]="i === 0"
+              >
+                <div class="arrival-card">
+                  <img
+                    [src]="product.image"
+                    class="d-block w-100"
+                    alt="New Arrival"
+                  />
 
-  <div class="carousel-inner">
+                  <div class="arrival-overlay">
+                    <h3>
+                      {{ product.name }}
+                    </h3>
 
-    <div
-      class="carousel-item"
-      *ngFor="
-        let product of newArrivalProducts;
-        let i = index
-      "
-      [class.active]="i === 0"
-    >
+                    <p>Premium Collection</p>
 
-      <div class="arrival-card">
+                    <button class="shop-btn">Shop Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <img
-          [src]="product.image"
-          class="d-block w-100"
-          alt="New Arrival"
-        />
+            <!-- Controls -->
 
-        <div class="arrival-overlay">
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#arrivalCarousel"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
 
-          <h3>
-            {{ product.name }}
-          </h3>
-
-          <p>
-            Premium Collection
-          </p>
-
-          <button class="shop-btn">
-            Shop Now
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Controls -->
-
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#arrivalCarousel"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#arrivalCarousel"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon"></span>
-  </button>
-
-</div>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#arrivalCarousel"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
