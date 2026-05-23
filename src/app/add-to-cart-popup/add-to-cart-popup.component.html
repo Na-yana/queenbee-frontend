@@ -1,0 +1,22 @@
+<div class="cart-popup">
+  <div class="popup-header">
+    ✔ Item added to your cart
+    <span class="close" (click)="close.emit()">✕</span>
+  </div>
+
+  <div class="popup-body">
+    <img [src]="product.image" />
+    <div>
+      <h6>{{ product.name }}</h6>
+      <p>Color: Red</p>
+    </div>
+  </div>
+
+  <button class="btn-outline" routerLink="/cart">
+    View cart ({{ cartCount }})
+  </button>
+
+  <button class="btn-black" (click)="goToCheckout()">Check out</button>
+
+  <a class="continue" (click)="close.emit()">Continue shopping</a>
+</div>

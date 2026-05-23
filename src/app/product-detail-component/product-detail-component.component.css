@@ -1,0 +1,16 @@
+.zoom-img {
+  transition: transform 0.2s ease;
+  cursor: zoom-in;
+  padding:50px;
+}
+
+.zoom-img:hover {
+  transform: scale(1.1);
+  border:1px solid black;
+}
+
+.detail-section{
+    padding:50px;
+}
+
+

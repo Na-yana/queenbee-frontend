@@ -1,0 +1,237 @@
+<!-- Modern Responsive Fashion Carousel -->
+<div
+  id="carouselExampleInterval"
+  class="carousel slide modern-carousel"
+  data-bs-ride="carousel"
+>
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide-to="0"
+      class="active"
+    ></button>
+
+    <button
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide-to="1"
+    ></button>
+
+    <button
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide-to="2"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img
+        src="assets/banner1.jpg"
+        class="d-block w-100"
+        alt="Fashion Banner"
+      />
+
+      <!-- Overlay -->
+      <div class="carousel-overlay"></div>
+
+      <!-- Content -->
+      <div class="carousel-caption custom-caption">
+        <p class="small-text">NEW COLLECTION 2026</p>
+        <h1>Modern Fashion For Everyone</h1>
+        <p class="sub-text">
+          Discover trendy outfits with premium quality and comfort.
+        </p>
+
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item" data-bs-interval="5000">
+      <img
+        src="assets/banner2.jpg"
+        class="d-block w-100"
+        alt="Fashion Banner"
+      />
+
+      <div class="carousel-overlay"></div>
+
+      <div class="carousel-caption custom-caption">
+        <p class="small-text">SUMMER SALE</p>
+        <h1>Up To 50% Off</h1>
+        <p class="sub-text">Upgrade your wardrobe with stylish collections.</p>
+
+        <button class="shop-btn">Explore</button>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img
+        src="assets/banner3.jpg"
+        class="d-block w-100"
+        alt="Fashion Banner"
+      />
+
+      <div class="carousel-overlay"></div>
+
+      <div class="carousel-caption custom-caption">
+        <p class="small-text">LIMITED EDITION</p>
+        <h1>Elegant & Trendy Styles</h1>
+        <p class="sub-text">Fashion that matches your personality perfectly.</p>
+
+        <button class="shop-btn">View Collection</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Previous -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <!-- Next -->
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- =========================
+     CATEGORY + NEW ARRIVALS SECTION
+========================= -->
+
+<section class="category-arrival-section">
+  <div class="container-fluid">
+    <div class="row g-4">
+      <!-- =========================
+           LEFT SIDE : CATEGORIES
+      ========================= -->
+
+      <div class="col-lg-8">
+        <div class="section-title">
+          <h2>Categories</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6" *ngFor="let category of categories">
+            <div
+              class="card category-card border-0"
+              (click)="openCategory(category.id)"
+            >
+              <div class="category-image">
+                <img
+                  [src]="category.image"
+                  class="img-fluid"
+                  [alt]="category.name"
+                />
+              </div>
+
+              <div class="card-body">
+                <h5>
+                  {{ category.name }}
+                  <span>→</span>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+           RIGHT SIDE : NEW ARRIVALS
+      ========================= -->
+
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="arrival-wrapper">
+          <div class="section-title">
+            <h2>New Arrivals</h2>
+          </div>
+
+         <div
+          id="arrivalCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+
+  <div class="carousel-inner">
+
+    <div
+      class="carousel-item"
+      *ngFor="
+        let product of newArrivalProducts;
+        let i = index
+      "
+      [class.active]="i === 0"
+    >
+
+      <div class="arrival-card">
+
+        <img
+          [src]="product.image"
+          class="d-block w-100"
+          alt="New Arrival"
+        />
+
+        <div class="arrival-overlay">
+
+          <h3>
+            {{ product.name }}
+          </h3>
+
+          <p>
+            Premium Collection
+          </p>
+
+          <button class="shop-btn">
+            Shop Now
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#arrivalCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#arrivalCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

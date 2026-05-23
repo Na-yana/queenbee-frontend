@@ -1,0 +1,49 @@
+<div class="header-wrapper">
+  <nav class="navbar">
+    <div class="container-fluid custom-container">
+      <!-- LEFT -->
+      <a class="navbar-brand" href="#">
+        <div class="logo-image">
+          <img src="assets/qblogo1.jpeg" alt="Queen Bee" />
+        </div>
+
+        <div class="logo-content">
+          <h1>Queen Bee</h1>
+
+          <span> Women's Essentials </span>
+        </div>
+      </a>
+
+      <!-- RIGHT -->
+      <div class="header-right">
+        <!-- SEARCH -->
+        <div class="search-container">
+          <!-- SEARCH ICON -->
+          <button class="search-toggle" (click)="showSearch = !showSearch">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <!-- SEARCH BOX -->
+          <div class="search-box" [class.active]="showSearch">
+            <input type="text" placeholder="Search products..." />
+          </div>
+        </div>
+
+        <!-- PHONE -->
+        <!-- <a href="tel:+917510552532" class="icon-btn">
+          <i class="bi bi-telephone"></i>
+        </a> -->
+
+        <!-- INSTAGRAM -->
+        <a href="https://instagram.com" target="_blank" class="icon-btn">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/917510552532" target="_blank" class="icon-btn">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>

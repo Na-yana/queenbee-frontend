@@ -1,0 +1,86 @@
+<div class="container my-5">
+  <h2 class="mb-4">Your cart</h2>
+
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th style="width: 160px;">Quantity</th>
+        <th>Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of cartItems">
+        <!-- PRODUCT -->
+        <td>
+          <div class="d-flex align-items-center gap-3">
+            <img
+              [src]="item.image"
+              alt="{{ item.name }}"
+              width="80"
+              class="border"
+            />
+            <div>
+              <strong>{{ item.name }}</strong>
+              <p class="mb-0 text-muted">Color: Red</p>
+            </div>
+          </div>
+        </td>
+
+        <!-- PRICE -->
+        <td>
+          Rs. {{ item.discounted_price || item.price }}
+        </td>
+
+        <!-- QUANTITY -->
+        <td>
+          <div class="qty-box">
+            <button (click)="updateQty(item, item.quantity - 1)">−</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="updateQty(item, item.quantity + 1)">+</button>
+          </div>
+        </td>
+
+        <!-- TOTAL -->
+        <td>
+          Rs. {{
+            item.quantity *
+            (item.discounted_price || item.price)
+          }}
+        </td>
+
+        <!-- REMOVE -->
+        <td>
+          <button class="btn btn-link text-danger"
+            (click)="remove(item)">
+            🗑REMOVE
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <!-- CART SUMMARY -->
+  <div class="d-flex justify-content-end">
+    <div style="max-width: 350px; width: 100%;">
+      <div class="d-flex justify-content-between mb-2">
+        <span>Estimated total</span>
+        <strong>Rs. {{ total }}</strong>
+      </div>
+
+      <!-- <p class="text-muted small">
+        Tax included. Shipping calculated at checkout.
+      </p> -->
+
+      <button routerLink="/checkout" class="btn btn-dark w-100 mt-3">
+        Checkout
+      </button>
+
+    </div>
+  </div>
+</div>

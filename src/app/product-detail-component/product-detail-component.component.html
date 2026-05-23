@@ -1,0 +1,60 @@
+<div class="container my-5" *ngIf="product">
+  <div class="row">
+    <!-- IMAGE -->
+    <div class="col-md-6">
+      <img [src]="product.image" class="img-fluid zoom-img" />
+    </div>
+
+    <!-- DETAILS -->
+    <div class="detail-section col-md-6">
+      <span class="fs-small">QUEEN BEE</span>
+      <h2>{{ product.name }}</h2>
+
+      <p *ngIf="product.discount_percentage > 0">
+        <del class="text-muted">Rs. {{ product.price }}</del>
+        <span class="fw-bold text-dark ms-2">
+          Rs. {{ product.discounted_price }}
+        </span>
+        <span class="ms-2" style="color: red"
+          >{{ product.discount_percentage }}%OFF</span
+        >
+      </p>
+
+      <p *ngIf="product.discount_percentage === 0">
+        <strong>Rs. {{ product.price }}</strong>
+      </p>
+
+      <p>"Hurry up! Limited stock is available"</p>
+
+      <!-- Quantity -->
+      <span class="text-muted">Quantity</span>
+      <div class="d-flex align-items-center my-3">
+        <button class="btn btn-outline-dark" (click)="decreaseQty()">-</button>
+        <span class="mx-3">{{ quantity }}</span>
+        <button class="btn btn-outline-dark" (click)="increaseQty()">+</button>
+      </div>
+
+      <!-- Buttons -->
+      <button class="btn btn-dark w-75 mb-2" (click)="addToCart()">Add to cart</button>
+
+      <app-add-to-cart-popup
+        *ngIf="showPopup"
+        [product]="product"
+        [cartCount]="1"
+        (close)="showPopup = false"
+      >
+      </app-add-to-cart-popup>
+
+      <br />
+      <button class="btn btn-warning w-75" (click)="buyNow()">Buy Now</button>
+
+      <p class="mt-3 text-muted">Secure and trusted checkout with</p>
+
+      <div class="d-flex gap-3 align-items-center">
+        <img src="assets/GooglePay.png" height="30" />
+        <img src="assets/amazonpay.png" height="28" />
+        <img src="assets/MasterCard.png" height="30" />
+      </div>
+    </div>
+  </div>
+</div>

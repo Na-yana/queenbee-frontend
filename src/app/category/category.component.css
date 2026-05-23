@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+/* =========================
+   MODERN FASHION CAROUSEL
+========================= */
+
+.modern-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.modern-carousel .carousel-item {
+  position: relative;
+}
+
+/* Image Styling */
+.modern-carousel .carousel-item img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* Dark Overlay */
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Caption Styling */
+.custom-caption {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 2;
+  max-width: 600px;
+}
+
+/* Small Top Text */
+.small-text {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #f5f5f5;
+}
+
+/* Main Heading */
+.custom-caption h1 {
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Subtitle */
+.sub-text {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #f1f1f1;
+}
+
+/* Button */
+.shop-btn {
+  padding: 14px 35px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: 0.4s ease;
+}
+
+.shop-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Arrow Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 60% 60%;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Indicators */
+.carousel-indicators button {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .modern-carousel .carousel-item img {
+    height: 70vh;
+  }
+
+  .custom-caption h1 {
+    font-size: 45px;
+  }
+
+  .sub-text {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .modern-carousel .carousel-item img {
+    height: 60vh;
+  }
+
+  .custom-caption {
+    left: 5%;
+    right: 5%;
+    max-width: 100%;
+  }
+
+  .custom-caption h1 {
+    font-size: 32px;
+  }
+
+  .small-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .sub-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .shop-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    padding: 18px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .modern-carousel .carousel-item img {
+    height: 50vh;
+  }
+
+  .custom-caption h1 {
+    font-size: 24px;
+  }
+
+  .sub-text {
+    font-size: 13px;
+  }
+
+  .shop-btn {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.category-arrival-section {
+  background: #ffffff;
+  padding: 60px 4%;
+}
+
+.category-arrival-section .row {
+  align-items: start;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.section-title {
+  margin-bottom: 25px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.category-card {
+  background: #f3f3f3;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  transition: 0.4s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  transform: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.category-image {
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s ease;
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.03);
+}
+
+.category-card .card-body {
+  padding: 16px;
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+}
+
+.category-card h5 {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-card h5 span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  transition: 0.3s ease;
+}
+
+/* Arrow move effect on hover */
+
+.category-card:hover h5 span {
+  transform: translateX(6px);
+  color: #000;
+}
+
+/* =========================
+   NEW ARRIVAL
+========================= */
+
+.arrival-wrapper {
+  /* height: 100%; */
+  background: transparent;
+  padding: 0;
+}
+
+.arrival-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.arrival-card img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/* Overlay */
+
+.arrival-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.15));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 35px;
+  color: #fff;
+}
+
+.arrival-overlay h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.arrival-overlay p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Button */
+
+.shop-btn {
+  width: fit-content;
+  border: none;
+  background: #fff;
+  color: #000;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.4s ease;
+}
+
+.shop-btn:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.shop-btn {
+  transition: all 0.3s ease;
+}
+
+/* Carousel Controls */
+
+#arrivalCarousel .carousel-control-prev-icon,
+#arrivalCarousel .carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .arrival-card img {
+    height: 760px;
+  }
+
+  .category-image img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .arrival-card img {
+    height: 650px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-arrival-section {
+    padding: 40px 16px;
+  }
+
+  .section-title {
+    margin-bottom: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .category-image img {
+    height: 170px;
+  }
+
+  .category-card h5 {
+    font-size: 13px;
+  }
+
+  .arrival-card img {
+    height: 420px;
+  }
+
+  .arrival-overlay {
+    padding: 22px;
+  }
+
+  .arrival-overlay h3 {
+    font-size: 24px;
+  }
+
+  .arrival-overlay p {
+    font-size: 14px;
+  }
+
+  .shop-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title h2 {
+    font-size: 26px;
+  }
+
+  .category-image img {
+    height: 200px;
+  }
+
+  .arrival-card img {
+    height: 420px;
+  }
+
+  .arrival-overlay {
+    padding: 20px;
+  }
+
+  .arrival-overlay h3 {
+    font-size: 22px;
+  }
+
+  .arrival-overlay p {
+    font-size: 14px;
+  }
+
+  .shop-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

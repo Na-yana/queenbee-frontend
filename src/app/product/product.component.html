@@ -1,0 +1,178 @@
+<div class="container-fluid featured-section">
+  <div class="row g-4">
+    <!-- =========================
+     BREADCRUMB
+    ========================= -->
+
+    <div class="breadcrumb-wrapper">
+
+      <a routerLink="/" class="breadcrumb-home">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+      </a>
+
+      <span class="separator">
+        <i class="fa-solid fa-angle-right"></i>
+      </span>
+
+      <span class="active-page">
+        {{ selectedCategory || "Products" }}
+      </span>
+
+    </div>
+
+    <!-- =========================
+     CATEGORY TABS
+    ========================= -->
+
+    <div class="category-tabs">
+      <button
+        class="category-tab"
+        *ngFor="let category of categories"
+        [class.active]="selectedCategory === category.name"
+        (click)="changeCategory(category)"
+      >
+        {{ category.name }}
+      </button>
+    </div>
+    <!-- =========================
+         LEFT : PRODUCTS
+    ========================= -->
+
+    <div class="col-lg-8">
+      <div class="section-heading">
+        <h2>Trending Collection</h2>
+        <p>Discover our latest fashion essentials</p>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let product of paginatedProducts">
+          <!-- IMAGE -->
+
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name" />
+
+            <!-- DISCOUNT BADGE -->
+
+            <div class="discount-badge" *ngIf="product.discount_percentage > 0">
+              {{ product.discount_percentage }}% OFF
+            </div>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="social-actions">
+              <!-- WhatsApp -->
+
+              <a
+                href="#"
+                class="whatsapp"
+                (click)="shareOnWhatsApp(product, $event)"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+
+              <!-- Instagram -->
+
+              <a
+                href="#"
+                class="instagram"
+                (click)="shareOnInstagram(product, $event)"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CONTENT -->
+
+          <div class="product-content">
+            <h5>{{ product.name }}</h5>
+
+            <div class="price-section">
+              <div *ngIf="product.discount_percentage > 0">
+                <span class="old-price"> ₹{{ product.price }} </span>
+
+                <span class="new-price"> ₹{{ product.discounted_price }} </span>
+              </div>
+
+              <div class="new-price" *ngIf="product.discount_percentage === 0">
+                ₹{{ product.price }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination-wrapper">
+        <!-- Previous -->
+
+        <button
+          class="page-btn"
+          [disabled]="currentPage === 1"
+          (click)="changePage(currentPage - 1)"
+        >
+          Prev
+        </button>
+
+        <!-- Page Numbers -->
+
+        <button
+          class="page-btn"
+          *ngFor="let page of [].constructor(totalPages); let i = index"
+          [class.active]="currentPage === i + 1"
+          (click)="changePage(i + 1)"
+        >
+          {{ i + 1 }}
+        </button>
+
+        <!-- Next -->
+
+        <button
+          class="page-btn"
+          [disabled]="currentPage === totalPages"
+          (click)="changePage(currentPage + 1)"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+
+    <!-- =========================
+         RIGHT : OFFER SECTION
+    ========================= -->
+
+    <div class="col-lg-4">
+      <div class="offer-banner" *ngIf="offerBanner">
+
+  <img
+    [src]="offerBanner.image"
+    alt="Offer"
+  />
+
+  <div class="offer-overlay">
+
+    <span>
+      {{ offerBanner.title }}
+    </span>
+
+    <h2>
+      {{ offerBanner.title }}
+    </h2>
+
+    <p>
+      {{ offerBanner.subtitle }}
+    </p>
+
+    <button>
+      {{ offerBanner.button_text }}
+    </button>
+
+  </div>
+
+</div>
+    </div>
+  </div>
+</div>

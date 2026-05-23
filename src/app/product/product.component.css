@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+/* =========================
+   SECTION
+========================= */
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb-wrapper {
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 30px;
+
+  font-size: 14px;
+}
+
+/* HOME LINK */
+
+.breadcrumb-home {
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+
+  color: #666;
+
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.breadcrumb-home i {
+  font-size: 13px;
+}
+
+/* HOVER */
+
+.breadcrumb-home:hover {
+
+  color: #111;
+
+  transform: translateX(-2px);
+}
+
+/* SEPARATOR */
+
+.separator {
+
+  color: #bbb;
+
+  font-size: 12px;
+}
+
+/* ACTIVE PAGE */
+
+.active-page {
+
+  color: #111;
+
+  font-weight: 600;
+}
+
+/* =========================
+   CATEGORY TABS
+========================= */
+
+.category-tabs {
+  display: flex;
+
+  gap: 14px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+
+  margin-bottom: 35px;
+
+  scrollbar-width: none;
+}
+
+.category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* TAB */
+
+.category-tab {
+  border: none;
+
+  background: #fff;
+
+  color: #111;
+
+  padding: 12px 24px;
+
+  border-radius: 40px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-tab:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ACTIVE TAB */
+
+.category-tab.active {
+  background: #111;
+  color: #fff;
+}
+
+.featured-section {
+  padding: 70px 4%;
+  background: #fafafa;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.section-heading p {
+  color: #777;
+  margin: 0;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+  background: #fff;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* IMAGE */
+
+.product-image {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+}
+
+/* DISCOUNT */
+
+.discount-badge {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+}
+
+/* SOCIAL */
+
+.social-actions {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-actions a {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  backdrop-filter: blur(14px);
+
+  background: rgba(255,255,255,0.75);
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.12);
+
+  transition: all 0.35s ease;
+}
+
+.social-actions a:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.social-actions img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-actions i {
+  font-size: 20px;
+
+  color: #111;
+
+  transition: 0.3s ease;
+}
+
+/* WHATSAPP */
+
+.social-actions a.whatsapp:hover {
+  background: #25D366;
+}
+
+.social-actions a.whatsapp:hover i {
+  color: #fff;
+}
+
+/* INSTAGRAM */
+
+.social-actions a.instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+
+.social-actions a.instagram:hover i {
+  color: #fff;
+}
+
+/* CONTENT */
+
+.product-content {
+  padding: 20px;
+}
+
+.product-content h5 {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+
+  margin-bottom: 12px;
+
+  color: #111;
+}
+
+/* PRICE */
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.old-price {
+  color: #999;
+
+  text-decoration: line-through;
+
+  margin-right: 10px;
+}
+
+.new-price {
+  color: #111;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================
+   OFFER BANNER
+========================= */
+
+.offer-banner {
+  position: relative;
+
+  height: 100%;
+
+  min-height: 640px;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+}
+
+.offer-banner img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.offer-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.15));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 45px;
+
+  color: #fff;
+}
+
+.offer-overlay span {
+  font-size: 13px;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.offer-overlay h2 {
+  font-size: 48px;
+  font-weight: 700;
+
+  margin-bottom: 16px;
+}
+
+.offer-overlay p {
+  font-size: 16px;
+
+  margin-bottom: 28px;
+}
+
+.offer-overlay button {
+  width: fit-content;
+
+  border: none;
+
+  background: #fff;
+  color: #111;
+
+  padding: 14px 32px;
+
+  font-weight: 600;
+
+  border-radius: 40px;
+
+  transition: 0.3s ease;
+}
+
+.offer-overlay button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offer-banner {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image img {
+    height: 280px;
+  }
+
+  .offer-banner {
+    min-height: 420px;
+  }
+
+  .offer-overlay {
+    padding: 25px;
+  }
+
+  .offer-overlay h2 {
+    font-size: 34px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+   .social-actions {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .social-actions a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .social-actions i {
+    font-size: 16px;
+  }
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  border: none;
+  background: #f5f5f5;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.page-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.page-btn.active {
+  background: #000;
+  color: #fff;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

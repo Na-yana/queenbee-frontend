@@ -1,0 +1,23 @@
+.qty-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  width: fit-content;
+}
+
+.qty-box button {
+  background: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+}
+
+.qty-box span {
+  width: 40px;
+  text-align: center;
+}
+
+table img {
+  object-fit: cover;
+}
