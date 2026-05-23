@@ -7,7 +7,9 @@ import { Observable} from  'rxjs';
 })
 export class ProductServiceService {
 
-  private apiUrl = 'http://127.0.0.1:8000/api/products/';
+  private apiUrl = 'https://queenbee-backend-2p7p.onrender.com/api/products/';
+
+  // private apiUrl = 'http://127.0.0.1:8000/api/products/';
 
   constructor(private http: HttpClient) { }
 
