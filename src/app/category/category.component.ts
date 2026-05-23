@@ -47,7 +47,7 @@ getNewArrivalProducts(): void {
       this.newArrivalProducts = res.map((item: any) => {
 
         item.image =
-          'http://127.0.0.1:8000' + item.image;
+          'https://queenbee-backend-2p7p.onrender.com' + item.image;
 
         return item;
 

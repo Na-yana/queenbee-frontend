@@ -178,7 +178,7 @@ getCategoryOffer(categoryId: any): void {
         if (res.image) {
 
           res.image =
-            'http://127.0.0.1:8000' + res.image;
+            'https://queenbee-backend-2p7p.onrender.com' + res.image;
 
         }
 
