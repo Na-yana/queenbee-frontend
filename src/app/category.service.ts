@@ -13,7 +13,7 @@ export interface Category {
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'http://127.0.0.1:8000/api/categories/';
+  private apiUrl = 'https://queenbee-backend-2p7p.onrender.com/api/categories';
   
 
   constructor(private http: HttpClient) { }
