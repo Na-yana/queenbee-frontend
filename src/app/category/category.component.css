@@ -226,12 +226,12 @@ body {
 
 .category-card {
   background: #f3f3f3;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   height: 100%;
-  transition: 0.4s ease;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: 0.35s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
 
   display: flex;
   flex-direction: column;
@@ -239,38 +239,45 @@ body {
 
 .category-card:hover {
   transform: none;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .category-image {
+  width: 100%;
+  aspect-ratio: 4 / 5; /* keeps all images same size */
   overflow: hidden;
+  background: #ececec;
 }
 
 .category-image img {
   width: 100%;
-  height: 210px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
   transition: 0.5s ease;
 }
 
 .category-card:hover .category-image img {
-  transform: scale(1.03);
+  transform: scale(1.06);
 }
 
 .category-card .card-body {
-  padding: 16px;
-  min-height: 70px;
+  padding: 16px 18px;
+  min-height: 72px;
 
   display: flex;
   align-items: center;
 }
 
 .category-card h5 {
-  font-size: 16px;
-  font-weight: 500;
+  width: 100%;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  color: #222;
 
   display: flex;
   align-items: center;
