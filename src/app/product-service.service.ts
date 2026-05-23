@@ -24,7 +24,7 @@ export class ProductServiceService {
 getCategoryOffer(categoryId: any) {
 
   return this.http.get(
-    `http://127.0.0.1:8000/api/category-offer/${categoryId}/`
+    `https://queenbee-backend-2p7p.onrender.com/api/category-offer/${categoryId}/`
   );
 
 }
