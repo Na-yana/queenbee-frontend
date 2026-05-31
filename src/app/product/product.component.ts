@@ -37,6 +37,8 @@ totalPages: number = 0;
 
   ngOnInit(): void {
 
+    
+
   this.getCategories();
 
   this.route.paramMap.subscribe(params => {

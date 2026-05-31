@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,15 +8,14 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
  currentYear: number = new Date().getFullYear();
- categories = [
-  'Bra',
-  'Panty',
-  'Sportswear',
-  'Nightwear',
-  'Shapewear',
-  'Lingerie Set',
-  'Camisole & Slips',
-  'Accessories',
-  'Clothing'
-];
+
+categories: any[] = [];
+
+constructor(private categoryService: CategoryService) {}
+
+ngOnInit() {
+  this.categoryService.getCategories().subscribe((res: any) => {
+    this.categories = res;
+  });
+}
 }
