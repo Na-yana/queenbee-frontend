@@ -18,15 +18,10 @@
       <div class="header-right">
         <!-- SEARCH -->
         <div class="search-container">
-          <!-- SEARCH ICON -->
-          <!-- <button class="search-toggle" (click)="showSearch = !showSearch">
+          <!-- Search Icon -->
+          <button class="search-toggle" (click)="showSearch = true">
             <i class="bi bi-search"></i>
-          </button> -->
-
-          <!-- SEARCH BOX -->
-          <!-- <div class="search-box" [class.active]="showSearch">
-            <input type="text" placeholder="Search products..." />
-          </div> -->
+          </button>
         </div>
 
         <!-- PHONE -->
@@ -35,15 +30,52 @@
         </a> -->
 
         <!-- INSTAGRAM -->
-        <a href="https://instagram.com" target="_blank" class="icon-btn">
-          <i class="bi bi-instagram"></i>
-        </a>
+        <a
+              href="https://www.instagram.com/queen_bee_by_aswathisreejin/"
+              target="_blank"
+              class="icon-btn"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
 
         <!-- WHATSAPP -->
-        <a href="https://wa.me/917510552532" target="_blank" class="icon-btn">
-          <i class="bi bi-whatsapp"></i>
-        </a>
+        <a
+              href="https://wa.me/918113874000?text=Hello%20QueenBee"
+              target="_blank"
+              class="icon-btn"
+            >
+              <i class="bi bi-whatsapp"></i>
+            </a>
       </div>
     </div>
   </nav>
+</div>
+
+<div class="search-modal" *ngIf="showSearch">
+  <div class="search-top">
+    <input
+      type="text"
+      placeholder="Search products..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+
+    <button class="close-btn" (click)="showSearch = false">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <div class="search-body">
+    <!-- Products -->
+    <div class="product-results">
+      <div class="product-card" *ngFor="let product of products">
+        <img [src]="product.image" />
+
+        <div>
+          <h6>{{ product.name }}</h6>
+          <p>₹{{ product.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

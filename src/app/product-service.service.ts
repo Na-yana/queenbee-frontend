@@ -29,4 +29,10 @@ getCategoryOffer(categoryId: any) {
 
 }
 
+searchProducts(keyword: string) {
+    return this.http.get(
+      `http://queenbee-backend-2p7p.onrender.com/api/products/search/?q=${keyword}`
+    );
+  }
+
 }

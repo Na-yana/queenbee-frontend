@@ -66,7 +66,9 @@
 
             <li><a routerLink="/" fragment="categories">Categories</a></li>
 
-            <li><a routerLink="/" >New Arrivals</a></li>
+            <li>
+              <a routerLink="/new-arrivals"> New Arrivals </a>
+            </li>
 
             <!-- <li><a routerLink="/about">About Us</a></li> -->
 
@@ -84,15 +86,14 @@
           <h4>Categories</h4>
 
           <ul>
-            <li><a href="#">Bra</a></li>
-
-            <li><a href="#">Panty</a></li>
-
-            <li><a href="#">Sportswear</a></li>
-
-            <li><a href="#">Nightwear</a></li>
-
-            <li><a href="#">Shapewear</a></li>
+            <li *ngFor="let category of categories">
+              <a
+                [routerLink]="['/products']"
+                [queryParams]="{ category: category.toLowerCase() }"
+              >
+                {{ category }}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -116,8 +117,7 @@
           <div class="contact-item">
             <i class="bi bi-telephone-fill"></i>
 
-            <p>8113874000</p>
-            <p>8113876000</p>
+            <p>8113874000, 8113876000</p>
           </div>
 
           <div class="contact-item">

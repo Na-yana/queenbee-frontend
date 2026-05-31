@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
  currentYear: number = new Date().getFullYear();
+ categories = [
+  'Bra',
+  'Panty',
+  'Sportswear',
+  'Nightwear',
+  'Shapewear',
+  'Lingerie Set',
+  'Camisole & Slips',
+  'Accessories',
+  'Clothing'
+];
 }
