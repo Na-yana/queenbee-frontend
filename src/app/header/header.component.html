@@ -31,21 +31,21 @@
 
         <!-- INSTAGRAM -->
         <a
-              href="https://www.instagram.com/queen_bee_by_aswathisreejin/"
-              target="_blank"
-              class="icon-btn"
-            >
-              <i class="bi bi-instagram"></i>
-            </a>
+          href="https://www.instagram.com/queen_bee_by_aswathisreejin/"
+          target="_blank"
+          class="icon-btn"
+        >
+          <i class="bi bi-instagram"></i>
+        </a>
 
         <!-- WHATSAPP -->
         <a
-              href="https://wa.me/918113874000?text=Hello%20QueenBee"
-              target="_blank"
-              class="icon-btn"
-            >
-              <i class="bi bi-whatsapp"></i>
-            </a>
+          href="https://wa.me/918113874000?text=Hello%20QueenBee"
+          target="_blank"
+          class="icon-btn"
+        >
+          <i class="bi bi-whatsapp"></i>
+        </a>
       </div>
     </div>
   </nav>
@@ -68,7 +68,12 @@
   <div class="search-body">
     <!-- Products -->
     <div class="product-results">
-      <div class="product-card" *ngFor="let product of products">
+      <div
+        class="product-card"
+        *ngFor="let product of products"
+        [routerLink]="['/product', product.id]"
+        (click)="showSearch = false"
+      >
         <img [src]="product.image" />
 
         <div>
