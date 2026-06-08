@@ -26,14 +26,16 @@
 /* CONTAINER */
 
 .custom-container {
-  width: 92%;
-  margin: auto;
+  /* width: 92%;
+  margin: auto; */
 
-  height: 80px;
+  min-height: 72px;
+  padding: 8px 0;
+  /* padding: 14px 0; */
 
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 /* LOGO */
@@ -57,8 +59,6 @@
   height: auto;
   display: block;
 }
-
-
 
 /* LOGO TEXT */
 /* 
