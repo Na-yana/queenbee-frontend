@@ -21,16 +21,17 @@
 
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
+  border-bottom: 1px solid #f3f3f3;
 }
 
 /* CONTAINER */
 
 .custom-container {
-  margin: auto;
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
 
   min-height: 72px;
-  padding: 8px 0;
-  /* padding: 14px 0; */
 
   display: flex;
   align-items: center;
@@ -50,7 +51,7 @@
 /* LOGO IMAGE */
 
 .logo-image {
-  width: 100px;
+  width: 120px;
 }
 
 .logo-image img {
@@ -177,8 +178,8 @@
 /* ICONS */
 
 .icon-btn {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
 
   border-radius: 50%;
 
@@ -352,10 +353,9 @@
 /* MOBILE */
 
 @media (max-width: 768px) {
-  /* .custom-container {
+  .custom-container {
     width: 94%;
-    padding: 0;
-  } */
+  }
 
   .navbar-brand {
     gap: 10px;
