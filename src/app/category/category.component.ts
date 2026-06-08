@@ -47,7 +47,7 @@ getNewArrivalProducts(): void {
       this.newArrivalProducts = res.map((item: any) => {
 
         item.image =
-          'https://queenbee-backend-2p7p.onrender.com' + item.image;
+          'https://queenbee-backend-production.up.railway.app' + item.image;
 
         return item;
 

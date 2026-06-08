@@ -180,7 +180,7 @@ getCategoryOffer(categoryId: any): void {
         if (res.image) {
 
           res.image =
-            'https://queenbee-backend-2p7p.onrender.com' + res.image;
+            'https://queenbee-backend-production.up.railway.app' + res.image;
 
         }
 
