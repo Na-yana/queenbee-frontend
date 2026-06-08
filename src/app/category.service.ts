@@ -13,7 +13,7 @@ export interface Category {
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'https://queenbee-backend-2p7p.onrender.com/api/categories';
+  private apiUrl = 'https://api.qbwomensessential.com/api/categories';
   
 
   constructor(private http: HttpClient) { }
@@ -36,7 +36,7 @@ export class CategoryService {
   getProductsByCategory(categoryId: any) {
 
   return this.http.get(
-    `https://queenbee-backend-2p7p.onrender.com/api/products/?category=${categoryId}`
+    `https://api.qbwomensessential.com/api/products/?category=${categoryId}`
   );
 
 }

@@ -7,7 +7,7 @@ import { Observable} from  'rxjs';
 })
 export class ProductServiceService {
 
-  private apiUrl = 'https://queenbee-backend-2p7p.onrender.com/api/products/';
+  private apiUrl = 'https://api.qbwomensessential.com/api/products/';
 
   // private apiUrl = 'http://127.0.0.1:8000/api/products/';
 
@@ -24,14 +24,14 @@ export class ProductServiceService {
 getCategoryOffer(categoryId: any) {
 
   return this.http.get(
-    `https://queenbee-backend-2p7p.onrender.com/api/category-offer/${categoryId}/`
+    `https://api.qbwomensessential.com/api/category-offer/${categoryId}/`
   );
 
 }
 
 searchProducts(keyword: string) {
   return this.http.get(
-    `https://queenbee-backend-2p7p.onrender.com/api/products/?q=${keyword}`
+    `https://api.qbwomensessential.com/api/products/?q=${keyword}`
   );
 }
 
